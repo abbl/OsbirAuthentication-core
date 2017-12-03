@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ApexVcsIndex">
+    <index-move-record>
+      <option name="firstPath" value="/core/src/pl/bbl/database/statements/user/UsersTableStatements.java" />
+      <option name="path" value="/core/src/pl/bbl/database/statements/users/UsersTableStatements.java" />
+    </index-move-record>
+  </component>
+</project>

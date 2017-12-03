@@ -1,4 +1,4 @@
-package pl.bbl.database;
+package pl.bbl.database.connection;
 
 
 import java.sql.Connection;

@@ -1,5 +1,7 @@
 package pl.bbl.database;
 
+import pl.bbl.database.connection.DatabaseConnection;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;

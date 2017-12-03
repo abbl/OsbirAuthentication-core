@@ -1,7 +1,7 @@
 package pl.bbl.features.authentication.user.handler;
 
 import io.netty.channel.ChannelHandlerContext;
-import pl.bbl.database.DatabaseConnection;
+import pl.bbl.database.connection.DatabaseConnection;
 import pl.bbl.features.authentication.user.UserAuthenticator;
 import pl.bbl.network.packet.BasicPacket;
 import pl.bbl.network.server.handlers.UserHandler;
