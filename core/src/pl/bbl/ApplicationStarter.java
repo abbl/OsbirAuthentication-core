@@ -1,8 +1,8 @@
 package pl.bbl;
 
-import pl.bbl.servers.authentication.users.UserAuthenticationServer;
-import pl.bbl.servers.authentication.users.properties.ServerProperties;
-import pl.bbl.servers.authentication.users.user.User;
+import pl.bbl.servers.users.UserAuthenticationServer;
+import pl.bbl.servers.users.properties.ServerProperties;
+import pl.bbl.servers.users.user.User;
 
 public class ApplicationStarter {
     public static void main(String args[]){

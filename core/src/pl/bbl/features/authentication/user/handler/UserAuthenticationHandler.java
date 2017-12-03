@@ -6,7 +6,7 @@ import pl.bbl.features.authentication.user.UserAuthenticator;
 import pl.bbl.network.packet.BasicPacket;
 import pl.bbl.network.server.handlers.UserHandler;
 import pl.bbl.network.server.hive.UserHive;
-import pl.bbl.servers.authentication.users.user.User;
+import pl.bbl.servers.users.user.User;
 
 
 public class UserAuthenticationHandler extends UserHandler{

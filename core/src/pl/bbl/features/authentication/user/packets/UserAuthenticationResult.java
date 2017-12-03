@@ -9,7 +9,7 @@ public class UserAuthenticationResult {
 
     private static BasicPacket preparePacket(boolean result){
         BasicPacket basicPacket = new BasicPacket("LOGIN_RESULT");
-        basicPacket.addData("result", true);
+        basicPacket.addData("result", result);
         return basicPacket;
     }
 }
