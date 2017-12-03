@@ -20,6 +20,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Gradle: io.netty:netty-all:4.0.4.Final" level="project" />
+    <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.13" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="core_main" />
 </module>

@@ -11,18 +11,6 @@ import java.util.logging.Logger;
  * Created by Bbl on 09.03.2017.
  */
 public class DatabaseConnection {
-
-    /*
-    *   Connection credentials.
-    **/
-    public static class DatabaseCredentials{
-        public String host;
-        public String databaseName;
-        public String user;
-        public String password;
-        public int port;
-    }
-
     private DatabaseCredentials DatabaseCredentials;
 
     //Connection itself
