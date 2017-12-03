@@ -1,4 +1,4 @@
-package pl.bbl.servers.authentication.users;
+package pl.bbl.servers.users;
 
 import io.netty.channel.ChannelPipeline;
 import pl.bbl.database.connection.DatabaseConnection;
@@ -6,8 +6,8 @@ import pl.bbl.database.connection.DatabaseCredentials;
 import pl.bbl.features.authentication.user.handler.UserAuthenticationHandler;
 import pl.bbl.network.server.BasicServer;
 import pl.bbl.network.server.connection.AbstractUser;
-import pl.bbl.servers.authentication.users.properties.ServerProperties;
-import pl.bbl.servers.authentication.users.user.User;
+import pl.bbl.servers.users.properties.ServerProperties;
+import pl.bbl.servers.users.user.User;
 
 public class UserAuthenticationServer extends BasicServer {
     private DatabaseConnection databaseConnection;
