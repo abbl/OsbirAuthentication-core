@@ -1,10 +1,17 @@
 package pl.bbl.server;
 
-import pl.bbl.server.properties.ServerProperties;
-import pl.bbl.server.starter.ServerStarter;
+import io.netty.channel.ChannelPipeline;
+import pl.bbl.network.server.BasicServer;
+import pl.bbl.network.server.connection.AbstractUser;
 
-public class AuthenticationServer {
-    public static void main(String args[]) throws Exception{
-        new ServerStarter(ServerProperties.USER_CONNECTION_PORT).run();
+public class AuthenticationServer extends BasicServer {
+
+    public AuthenticationServer(int port, AbstractUser abstractUser) {
+        super(port, abstractUser);
+    }
+
+    @Override
+    protected void addHandlersToChannel(ChannelPipeline pipeline) {
+
     }
 }

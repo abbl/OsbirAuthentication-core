@@ -2,6 +2,7 @@ allprojects {
     apply plugin: "idea"
 
     repositories {
+
         mavenLocal()
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
@@ -15,5 +16,6 @@ project(":core") {
 
     dependencies {
         compile group: 'io.netty', name: 'netty-all', version: '4.0.4.Final'
+        compile files('libs/OsbirNetworkFramework.jar')
     }
 }
