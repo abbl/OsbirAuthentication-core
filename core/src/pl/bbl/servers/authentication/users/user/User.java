@@ -1,4 +1,4 @@
-package pl.bbl.server.user;
+package pl.bbl.servers.authentication.users.user;
 
 import io.netty.channel.ChannelHandlerContext;
 import pl.bbl.network.server.connection.AbstractUser;

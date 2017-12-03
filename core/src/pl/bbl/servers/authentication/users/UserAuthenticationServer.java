@@ -1,23 +1,32 @@
-package pl.bbl.server;
+package pl.bbl.servers.authentication.users;
 
 import io.netty.channel.ChannelPipeline;
 import pl.bbl.database.connection.DatabaseConnection;
 import pl.bbl.database.connection.DatabaseCredentials;
+import pl.bbl.features.authentication.user.handler.UserAuthenticationHandler;
 import pl.bbl.network.server.BasicServer;
 import pl.bbl.network.server.connection.AbstractUser;
-import pl.bbl.server.properties.ServerProperties;
+import pl.bbl.servers.authentication.users.properties.ServerProperties;
+import pl.bbl.servers.authentication.users.user.User;
 
-public class AuthenticationServer extends BasicServer {
+public class UserAuthenticationServer extends BasicServer {
     private DatabaseConnection databaseConnection;
 
-    public AuthenticationServer(int port, AbstractUser abstractUser) {
+    public UserAuthenticationServer(int port, AbstractUser abstractUser) {
         super(port, abstractUser);
         establishDatabaseConnection();
     }
 
+    /**
+     * WORK THIS ONE OUT
+     * XAXAXAXAXAXAX
+     * DONT FORGET IT WILL FAIL WITH COMPILATION ANYWAY
+     * HELLO FUTURE ME.
+     */
     @Override
     protected void addHandlersToChannel(ChannelPipeline pipeline) {
-
+        User user;
+        pipeline.addLast(new UserAuthenticationHandler(userHive, databaseConnection));
     }
 
     private void establishDatabaseConnection(){

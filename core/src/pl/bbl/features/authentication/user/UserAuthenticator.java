@@ -4,7 +4,7 @@ import pl.bbl.database.connection.DatabaseConnection;
 import pl.bbl.database.statements.users.UsersTableStatements;
 import pl.bbl.features.authentication.user.packets.UserAuthenticationResult;
 import pl.bbl.network.packet.BasicPacket;
-import pl.bbl.server.user.User;
+import pl.bbl.servers.authentication.users.user.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

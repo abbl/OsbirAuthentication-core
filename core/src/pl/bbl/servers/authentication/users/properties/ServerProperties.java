@@ -1,4 +1,4 @@
-package pl.bbl.server.properties;
+package pl.bbl.servers.authentication.users.properties;
 /*
  * ToDo
  * Load all of those properties from file.

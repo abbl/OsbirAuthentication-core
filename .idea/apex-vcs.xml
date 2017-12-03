@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ApexVcsIndex">
     <index-move-record>
+      <option name="firstPath" value="/core/src/pl/bbl/server/user" />
+      <option name="path" value="/core/src/pl/bbl/servers/user" />
+    </index-move-record>
+    <index-move-record>
+      <option name="firstPath" value="/core/src/pl/bbl/server/AuthenticationServer.java" />
+      <option name="path" value="/core/src/pl/bbl/servers/AuthenticationServer.java" />
+    </index-move-record>
+    <index-move-record>
       <option name="firstPath" value="/core/src/pl/bbl/database/statements/user/UsersTableStatements.java" />
       <option name="path" value="/core/src/pl/bbl/database/statements/users/UsersTableStatements.java" />
+    </index-move-record>
+    <index-move-record>
+      <option name="firstPath" value="/core/src/pl/bbl/server/properties" />
+      <option name="path" value="/core/src/pl/bbl/servers/properties" />
     </index-move-record>
   </component>
 </project>
