@@ -1,4 +1,4 @@
-package pl.bbl.database;
+package pl.bbl.database.statements;
 
 import pl.bbl.database.connection.DatabaseConnection;
 

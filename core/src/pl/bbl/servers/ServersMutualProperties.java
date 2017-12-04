@@ -1,12 +1,6 @@
-package pl.bbl.servers.users.properties;
-/*
- * ToDo
- * Load all of those properties from file.
- */
-public class ServerProperties {
-    /*Server connection variables*/
-    public static final int USER_CONNECTION_PORT = 9987;
-    /*Database connection variables*/
+package pl.bbl.servers;
+
+public abstract class ServersMutualProperties {
     public static final String DATABASE_HOST = "localhost";
     public static final int DATABASE_PORT = 3306;
     public static final String DATABASE_NAME = "osbirauthentication";

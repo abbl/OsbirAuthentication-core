@@ -1,6 +1,6 @@
 package pl.bbl.database.statements.users;
 
-import pl.bbl.database.DatabaseStatements;
+import pl.bbl.database.statements.DatabaseStatements;
 import pl.bbl.database.connection.DatabaseConnection;
 
 import java.sql.ResultSet;

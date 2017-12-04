@@ -1,13 +1,24 @@
 package pl.bbl;
 
+import pl.bbl.database.Database;
+import pl.bbl.database.connection.DatabaseConnection;
+import pl.bbl.servers.gameservers.GameserverAuthenticationServer;
+import pl.bbl.servers.gameservers.properties.GameServerProperties;
 import pl.bbl.servers.users.UserAuthenticationServer;
-import pl.bbl.servers.users.properties.ServerProperties;
+import pl.bbl.servers.users.properties.UserServerProperties;
 import pl.bbl.servers.users.user.User;
 
 public class ApplicationStarter {
     public static void main(String args[]){
         try {
-            new UserAuthenticationServer(ServerProperties.USER_CONNECTION_PORT, new User()).run();
+            DatabaseConnection databaseConnection = Database.establishDatabaseConnection();
+            if(!databaseConnection.getConnection().isClosed()){
+                new Thread(new UserAuthenticationServer(UserServerProperties.USER_CONNECTION_PORT, new User(), databaseConnection)).start();
+                System.out.println("[UserAuthenticationServer]Server started.");
+                new Thread(new GameserverAuthenticationServer(GameServerProperties.GAMESERVER_CONNECTION_PORT, new User(), databaseConnection)).start();
+                System.out.println("[GameserverAuthenticationServer]Server started.");
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
