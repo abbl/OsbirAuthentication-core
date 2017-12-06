@@ -24,8 +24,12 @@ public class UserAuthenticationServer extends BasicServer {
      */
     @Override
     protected void addHandlersToChannel(ChannelPipeline pipeline) {
-        User user;
-        pipeline.addLast(new UserAuthenticationHandler(userHive, databaseConnection));
+        UserAuthenticationHandler userAuthenticationServer = new UserAuthenticationHandler(userHive, databaseConnection);
+        pipeline.addLast(userAuthenticationServer);
+        User user = userAuthenticationServer.getUser();
+        if(user != null){
+            System.out.println("Bangla");
+        }
     }
 
 

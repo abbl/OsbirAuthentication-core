@@ -2,6 +2,7 @@ package pl.bbl;
 
 import pl.bbl.database.Database;
 import pl.bbl.database.connection.DatabaseConnection;
+import pl.bbl.network.client.BasicClient;
 import pl.bbl.servers.gameservers.GameserverAuthenticationServer;
 import pl.bbl.servers.gameservers.properties.GameServerProperties;
 import pl.bbl.servers.users.UserAuthenticationServer;

@@ -31,4 +31,8 @@ public class UserAuthenticationHandler extends UserHandler{
         super.channelActive(ctx);
         user = (User) userHive.getUserByContextHandler(ctx);
     }
+
+    public User getUser(){
+        return user;
+    }
 }
