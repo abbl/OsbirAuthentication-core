@@ -15,7 +15,7 @@ project(":core") {
     apply plugin: "application"
 
     dependencies {
-        compile group: 'io.netty', name: 'netty-all', version: '4.0.4.Final'
+        compile group: 'io.netty', name: 'netty-all', version: '4.1.17.Final'
         compile files('libs/OsbirNetworkFramework.jar')
         compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
     }

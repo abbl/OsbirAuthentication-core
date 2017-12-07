@@ -1,14 +1,15 @@
 package pl.bbl.features.authentication.user.packets;
 
-import pl.bbl.network.packet.BasicPacket;
+
+import pl.bbl.network.packet.Packet;
 
 public class UserAuthenticationResult {
-    public static BasicPacket createPacket(boolean result){
+    public static Packet createPacket(boolean result){
         return preparePacket(result);
     }
 
-    private static BasicPacket preparePacket(boolean result){
-        BasicPacket basicPacket = new BasicPacket("LOGIN_RESULT");
+    private static Packet preparePacket(boolean result){
+        Packet basicPacket = new Packet("LOGIN_RESULT");
         basicPacket.addData("result", result);
         return basicPacket;
     }

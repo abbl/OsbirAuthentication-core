@@ -1,12 +1,14 @@
 package pl.bbl.servers.users.user;
 
-import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.Channel;
 import pl.bbl.network.server.connection.AbstractUser;
 
 public class User extends AbstractUser{
-    public User(){}
+    public User(){
 
-    public User(ChannelHandlerContext channelHandlerContext){
-        super(channelHandlerContext);
+    }
+
+    public User(String id, Channel channel){
+        super(id, channel);
     }
 }
