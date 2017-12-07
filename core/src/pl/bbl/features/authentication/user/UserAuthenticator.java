@@ -8,6 +8,8 @@ import pl.bbl.servers.users.user.User;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class UserAuthenticator {
     private static DatabaseConnection databaseConnection;
@@ -24,6 +26,7 @@ public class UserAuthenticator {
 
         if(searchDatabaseForAccount(login, password)){
             user.setAuthenticated(true);
+            Logger.getLogger(UserAuthenticator.class.getName()).log(Level.INFO, "[UserAuthenticationServer]" + login + " has been authenticated.");
         }
         user.sendPacket(UserAuthenticationResult.createPacket(user.isAuthenticated()));
     }
