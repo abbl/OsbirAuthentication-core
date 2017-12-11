@@ -9,7 +9,9 @@ public class DatabaseTools {
     }
 
     public static boolean isDatabaseConnectionEqual(DatabaseConnection firstConnection, DatabaseConnection secondConnection){
-        return firstConnection.equals(secondConnection);
+        if(firstConnection != null)
+            return firstConnection.equals(secondConnection);
+        return false;
     }
 
     public static boolean isDatabaseNull(DatabaseConnection databaseConnection){

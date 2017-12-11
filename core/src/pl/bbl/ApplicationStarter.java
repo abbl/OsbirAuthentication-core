@@ -22,7 +22,7 @@ public class ApplicationStarter {
                 System.out.println("[GameServerAuthenticationServer]Server started.");
                 TestClient testClient = new TestClient("localhost",  9987);
                 new Thread(testClient).start();
-                Packet login = new Packet("START_LOGIN");
+                Packet login = new Packet("AUTHENTICATION_PACKETS", "AUTHENTICATION_START");
                 login.addData("login", "abbl");
                 login.addData("password", "123");
                 testClient.write(login);
