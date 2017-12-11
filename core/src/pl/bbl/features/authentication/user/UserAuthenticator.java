@@ -2,6 +2,7 @@ package pl.bbl.features.authentication.user;
 
 import pl.bbl.database.connection.DatabaseConnection;
 import pl.bbl.database.statements.users.UsersTableStatements;
+import pl.bbl.database.tools.DatabaseTools;
 import pl.bbl.features.authentication.user.packets.UserAuthenticationResult;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.servers.users.user.User;
@@ -15,8 +16,7 @@ public class UserAuthenticator {
     private static DatabaseConnection databaseConnection;
 
     public UserAuthenticator(DatabaseConnection databaseConnection){
-        if(UserAuthenticator.databaseConnection == null ||
-                !UserAuthenticator.databaseConnection.equals(databaseConnection))
+        if(DatabaseTools.doesConnectionObjectQualifyForChange(UserAuthenticator.databaseConnection, databaseConnection))
             UserAuthenticator.databaseConnection = databaseConnection;
     }
 

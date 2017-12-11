@@ -17,8 +17,6 @@ public class UserAuthenticationHandler extends AbstractPacketHandler {
 
     @Override
     protected void handlePacket(Packet packet) {
-        System.out.println("abc");
-
         switch (packet.packetType){
             case "START_LOGIN":
                 UserAuthenticator.startLoginProcess(packet, user);
