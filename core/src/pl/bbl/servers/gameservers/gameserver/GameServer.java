@@ -3,9 +3,11 @@ package pl.bbl.servers.gameservers.gameserver;
 import io.netty.channel.Channel;
 import pl.bbl.network.server.connection.AbstractUser;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class GameServer extends AbstractUser{
     private String authenticationKey;
-    private boolean readyToAcceptPlayers;
     private String name;
     private String host;
     private int port;
@@ -19,18 +21,9 @@ public class GameServer extends AbstractUser{
     }
 
     public void updateServerInformation(String name, String host, int port){
-        if(isAuthenticated()){
-            this.name = name;
-            this.host = host;
-            this.port = port;
-        }
-    }
-
-    public void setReady(boolean readyToAcceptPlayers){
-        this.readyToAcceptPlayers = readyToAcceptPlayers;
-    }
-
-    public boolean isReady(){
-        return readyToAcceptPlayers;
+        Logger.getLogger(GameServer.class.getName()).log(Level.INFO, "GameServer information updated." + name + " " + host + " " + port);
+        this.name = name;
+        this.host = host;
+        this.port = port;
     }
 }
