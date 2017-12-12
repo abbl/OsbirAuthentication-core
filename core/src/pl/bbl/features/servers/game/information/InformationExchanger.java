@@ -5,10 +5,10 @@ import pl.bbl.network.server.hive.UserHive;
 import pl.bbl.servers.gameservers.gameserver.GameServer;
 
 public class InformationExchanger {
-    UserHive userHive;
+    private static UserHive userHive;
 
     public InformationExchanger(UserHive userHive){
-
+        InformationExchanger.userHive = userHive;
     }
 
     public static void updateServerInformation(Packet packet, GameServer gameServer){

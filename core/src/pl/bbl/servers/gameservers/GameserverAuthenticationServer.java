@@ -6,10 +6,13 @@ import pl.bbl.features.authentication.gameserver.receiver.GameServerAuthenticati
 import pl.bbl.network.server.AbstractServer;
 import pl.bbl.network.server.connection.AbstractUser;
 import pl.bbl.network.server.handlers.PacketHandler;
+import pl.bbl.network.server.hive.UserHive;
+import pl.bbl.servers.LocalServersDataExchanger;
 import pl.bbl.servers.gameservers.gameserver.GameServer;
 
 public class GameServerAuthenticationServer extends AbstractServer{
     private DatabaseConnection databaseConnection;
+    private LocalServersDataExchanger localServersDataExchanger;
 
     public GameServerAuthenticationServer(int port, Class className, DatabaseConnection databaseConnection) {
         super(port, className);
@@ -24,5 +27,13 @@ public class GameServerAuthenticationServer extends AbstractServer{
         pipeline.addLast(packetHandler);
         packetHandler.addReceiver(new GameServerAuthenticationReceiver("AUTHENTICATION_PACKETS", gameServer, databaseConnection));
         return gameServer;
+    }
+
+    public UserHive getUserHive(){
+        return userHive;
+    }
+
+    public void setLocalServersDataExchanger(LocalServersDataExchanger localServersDataExchanger) {
+        this.localServersDataExchanger = localServersDataExchanger;
     }
 }

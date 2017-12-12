@@ -22,6 +22,7 @@ public class InformationExchangeReceiver extends PacketReceiver{
                 return true;
             case "VERIFY_USER":
                 InformationExchanger.checkIfUserKeyIsCorrect(packet);
+                return true;
         }
         return false;
     }
