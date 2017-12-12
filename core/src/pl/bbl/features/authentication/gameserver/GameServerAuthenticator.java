@@ -10,4 +10,8 @@ public class GameServerAuthenticator {
         if(DatabaseTools.doesConnectionObjectQualifyForChange(GameServerAuthenticator.databaseConnection, databaseConnection))
             GameServerAuthenticator.databaseConnection = databaseConnection;
     }
+
+    public static void authenticateGameServer(){
+        
+    }
 }
