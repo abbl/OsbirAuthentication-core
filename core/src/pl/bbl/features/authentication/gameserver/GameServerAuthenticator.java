@@ -2,7 +2,7 @@ package pl.bbl.features.authentication.gameserver;
 
 import pl.bbl.database.connection.DatabaseConnection;
 import pl.bbl.database.statements.gameservers.GameServerTableStatements;
-import pl.bbl.database.tools.DatabaseTools;
+import pl.bbl.tools.misc.ObjectComparison;
 import pl.bbl.features.authentication.user.packets.AuthenticationResultPacket;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.servers.gameservers.gameserver.GameServer;
@@ -14,7 +14,7 @@ public class GameServerAuthenticator {
     private static DatabaseConnection databaseConnection;
 
     public GameServerAuthenticator(DatabaseConnection databaseConnection){
-        if(DatabaseTools.doesConnectionObjectQualifyForChange(GameServerAuthenticator.databaseConnection, databaseConnection))
+        if(ObjectComparison.doesObjectQualifyForChange(GameServerAuthenticator.databaseConnection, databaseConnection))
             GameServerAuthenticator.databaseConnection = databaseConnection;
     }
 
