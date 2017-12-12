@@ -2,8 +2,11 @@ package pl.bbl.servers.gameservers;
 
 import io.netty.channel.ChannelPipeline;
 import pl.bbl.database.connection.DatabaseConnection;
+import pl.bbl.features.authentication.gameserver.receiver.GameServerAuthenticationReceiver;
 import pl.bbl.network.server.AbstractServer;
 import pl.bbl.network.server.connection.AbstractUser;
+import pl.bbl.network.server.handlers.PacketHandler;
+import pl.bbl.servers.gameservers.gameserver.GameServer;
 
 public class GameServerAuthenticationServer extends AbstractServer{
     private DatabaseConnection databaseConnection;
@@ -15,6 +18,11 @@ public class GameServerAuthenticationServer extends AbstractServer{
 
     @Override
     protected AbstractUser addHandlersToChannel(ChannelPipeline pipeline) {
-        return super.addHandlersToChannel(pipeline);
+        GameServer gameServer = (GameServer) super.addHandlersToChannel(pipeline);
+        PacketHandler packetHandler = new PacketHandler();
+
+        pipeline.addLast(packetHandler);
+        packetHandler.addReceiver(new GameServerAuthenticationReceiver("AUTHENTICATION_PACKETS", gameServer, databaseConnection));
+        return gameServer;
     }
 }

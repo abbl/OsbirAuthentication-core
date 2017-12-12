@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class GameServerTableStatements {
     public static ResultSet getGameServerData(DatabaseConnection databaseConnection, String authenticationKey){
-        ResultSet resultSet = DatabaseStatements.queryDatabase(databaseConnection, "SELECT * FROM gameservers WHERE serverAuthenticationKey ='" + authenticationKey + "'");
+        ResultSet resultSet = DatabaseStatements.queryDatabase(databaseConnection, "SELECT * FROM gameservers WHERE BINARY serverAuthenticationKey ='" + authenticationKey + "'");
         try {
             if(resultSet.next()){
                 return resultSet;

@@ -23,7 +23,7 @@ public class ApplicationStarter {
                 TestClient testClient = new TestClient("localhost",  9987);
                 new Thread(testClient).start();
                 Packet login = new Packet("AUTHENTICATION_PACKETS", "AUTHENTICATION_START");
-                login.addData("login", "abbl");
+                login.addData("login", "Abbl");
                 login.addData("password", "123");
                 testClient.write(login);
             }

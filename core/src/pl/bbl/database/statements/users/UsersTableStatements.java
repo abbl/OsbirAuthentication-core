@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class UsersTableStatements {
     public static ResultSet getUserData(DatabaseConnection databaseConnection, String login){
         ResultSet resultSet = DatabaseStatements.queryDatabase(databaseConnection,
-                "SELECT * FROM users WHERE login = '" + login + "'");
+                "SELECT * FROM users WHERE BINARY login = '" + login + "'");
         try {
             if(resultSet.next()){
                 return resultSet;

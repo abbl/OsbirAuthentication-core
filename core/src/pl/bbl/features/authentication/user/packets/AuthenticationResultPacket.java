@@ -3,7 +3,7 @@ package pl.bbl.features.authentication.user.packets;
 
 import pl.bbl.network.packet.Packet;
 
-public class UserAuthenticationResult {
+public class AuthenticationResultPacket {
     public static Packet createPacket(boolean result){
         return preparePacket(result);
     }

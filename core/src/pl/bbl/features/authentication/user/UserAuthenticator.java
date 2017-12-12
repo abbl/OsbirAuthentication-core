@@ -3,7 +3,7 @@ package pl.bbl.features.authentication.user;
 import pl.bbl.database.connection.DatabaseConnection;
 import pl.bbl.database.statements.users.UsersTableStatements;
 import pl.bbl.database.tools.DatabaseTools;
-import pl.bbl.features.authentication.user.packets.UserAuthenticationResult;
+import pl.bbl.features.authentication.user.packets.AuthenticationResultPacket;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.servers.users.user.User;
 
@@ -28,7 +28,7 @@ public class UserAuthenticator {
             user.setAuthenticated(true);
             Logger.getLogger(UserAuthenticator.class.getName()).log(Level.INFO, "[UserAuthenticationServer]" + login + " has been authenticated.");
         }
-        user.sendPacket(UserAuthenticationResult.createPacket(user.isAuthenticated()));
+        user.sendPacket(AuthenticationResultPacket.createPacket(user.isAuthenticated()));
     }
 
     private static boolean searchDatabaseForAccount(String login, String password){
