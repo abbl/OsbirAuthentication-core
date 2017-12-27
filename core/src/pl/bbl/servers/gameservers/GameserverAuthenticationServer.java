@@ -29,11 +29,11 @@ public class GameServerAuthenticationServer extends AbstractServer{
         return gameServer;
     }
 
-    public UserHive getUserHive(){
-        return userHive;
-    }
-
     public void setLocalServersDataExchanger(LocalServersDataExchanger localServersDataExchanger) {
         this.localServersDataExchanger = localServersDataExchanger;
+    }
+
+    public UserHive getUserHive(){
+        return userHive;
     }
 }
