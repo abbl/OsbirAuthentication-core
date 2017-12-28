@@ -3,7 +3,7 @@ package pl.bbl.servers.users;
 import io.netty.channel.ChannelPipeline;
 
 import pl.bbl.database.connection.DatabaseConnection;
-import pl.bbl.features.authentication.user.receiver.UserAuthenticationReceiver;
+import pl.bbl.features.route.user.authentication.receiver.UserAuthenticationReceiver;
 import pl.bbl.network.server.AbstractServer;
 import pl.bbl.network.server.connection.AbstractUser;
 import pl.bbl.network.server.handlers.PacketHandler;

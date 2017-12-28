@@ -1,7 +1,7 @@
-package pl.bbl.features.authentication.user.receiver;
+package pl.bbl.features.route.user.authentication.receiver;
 
 import pl.bbl.database.connection.DatabaseConnection;
-import pl.bbl.features.authentication.user.UserAuthenticator;
+import pl.bbl.features.route.user.authentication.UserAuthenticator;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.network.server.handlers.PacketReceiver;
 import pl.bbl.servers.users.user.User;

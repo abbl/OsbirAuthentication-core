@@ -1,4 +1,4 @@
-package pl.bbl.features.authentication.user.packets;
+package pl.bbl.features.route.user.authentication.packets;
 
 
 import pl.bbl.network.packet.Packet;

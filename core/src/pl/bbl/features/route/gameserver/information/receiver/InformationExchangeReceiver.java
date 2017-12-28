@@ -1,6 +1,6 @@
-package pl.bbl.features.servers.game.information.receiver;
+package pl.bbl.features.route.gameserver.information.receiver;
 
-import pl.bbl.features.servers.game.information.InformationExchanger;
+import pl.bbl.features.route.gameserver.information.InformationExchanger;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.network.server.handlers.PacketReceiver;
 import pl.bbl.network.server.hive.UserHive;

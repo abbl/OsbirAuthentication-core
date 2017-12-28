@@ -2,7 +2,7 @@ package pl.bbl.servers.gameservers;
 
 import io.netty.channel.ChannelPipeline;
 import pl.bbl.database.connection.DatabaseConnection;
-import pl.bbl.features.authentication.gameserver.receiver.GameServerAuthenticationReceiver;
+import pl.bbl.features.route.gameserver.authentication.receiver.GameServerAuthenticationReceiver;
 import pl.bbl.network.server.AbstractServer;
 import pl.bbl.network.server.connection.AbstractUser;
 import pl.bbl.network.server.handlers.PacketHandler;

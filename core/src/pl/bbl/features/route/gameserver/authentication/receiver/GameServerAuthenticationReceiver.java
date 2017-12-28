@@ -1,7 +1,7 @@
-package pl.bbl.features.authentication.gameserver.receiver;
+package pl.bbl.features.route.gameserver.authentication.receiver;
 
 import pl.bbl.database.connection.DatabaseConnection;
-import pl.bbl.features.authentication.gameserver.GameServerAuthenticator;
+import pl.bbl.features.route.gameserver.authentication.GameServerAuthenticator;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.network.server.handlers.PacketReceiver;
 import pl.bbl.servers.gameservers.gameserver.GameServer;

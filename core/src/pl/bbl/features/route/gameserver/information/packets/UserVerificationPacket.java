@@ -1,4 +1,4 @@
-package pl.bbl.features.servers.game.information.packets;
+package pl.bbl.features.route.gameserver.information.packets;
 
 import pl.bbl.network.packet.Packet;
 

@@ -1,6 +1,6 @@
-package pl.bbl.features.servers.game.information;
+package pl.bbl.features.route.gameserver.information;
 
-import pl.bbl.features.servers.game.information.packets.UserVerificationPacket;
+import pl.bbl.features.route.gameserver.information.packets.UserVerificationPacket;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.network.server.connection.AbstractUser;
 import pl.bbl.network.server.hive.UserHive;

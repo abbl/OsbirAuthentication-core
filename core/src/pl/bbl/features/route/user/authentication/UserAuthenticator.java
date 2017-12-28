@@ -1,9 +1,9 @@
-package pl.bbl.features.authentication.user;
+package pl.bbl.features.route.user.authentication;
 
 import pl.bbl.database.connection.DatabaseConnection;
 import pl.bbl.database.statements.users.UsersTableStatements;
 import pl.bbl.tools.misc.ObjectComparison;
-import pl.bbl.features.authentication.user.packets.AuthenticationResultPacket;
+import pl.bbl.features.route.user.authentication.packets.AuthenticationResultPacket;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.servers.users.user.User;
 
