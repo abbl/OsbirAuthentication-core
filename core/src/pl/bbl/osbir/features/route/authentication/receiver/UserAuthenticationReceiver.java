@@ -1,10 +1,10 @@
 package pl.bbl.osbir.features.route.authentication.receiver;
 
-import pl.bbl.osbir.database.connection.DatabaseConnection;
-import pl.bbl.osbir.features.route.authentication.UserAuthenticator;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.network.server.handlers.PacketReceiver;
-import pl.bbl.servers.users.user.User;
+import pl.bbl.osbir.database.connection.DatabaseConnection;
+import pl.bbl.osbir.features.route.authentication.UserAuthenticator;
+import pl.bbl.osbir.servers.users.user.User;
 
 public class UserAuthenticationReceiver extends PacketReceiver {
     private User user;

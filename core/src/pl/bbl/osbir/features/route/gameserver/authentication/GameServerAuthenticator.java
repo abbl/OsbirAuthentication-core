@@ -3,7 +3,7 @@ package pl.bbl.osbir.features.route.gameserver.authentication;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.osbir.database.connection.DatabaseConnection;
 import pl.bbl.osbir.database.statements.gameservers.GameServerTableStatements;
-import pl.bbl.osbir.features.route.authentication.packets.AuthenticationResultPacket;
+import pl.bbl.osbir.features.route.authentication.packets.UserAuthenticationPackets;
 import pl.bbl.osbir.servers.gameservers.gameserver.GameServer;
 import pl.bbl.osbir.tools.misc.ObjectComparison;
 
@@ -26,6 +26,6 @@ public class GameServerAuthenticator {
             gameServer.setAuthenticated(true);
             Logger.getLogger(GameServerAuthenticator.class.getName()).log(Level.INFO, "GameServer has been authenticated.");
         }
-        gameServer.sendPacket(AuthenticationResultPacket.createPacket(gameServer.isAuthenticated()));
+        gameServer.sendPacket(UserAuthenticationPackets.createPacket(gameServer.isAuthenticated()));
     }
 }

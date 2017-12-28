@@ -3,7 +3,7 @@ package pl.bbl.osbir.features.route.authentication.packets;
 
 import pl.bbl.network.packet.Packet;
 
-public class AuthenticationResultPacket {
+public class UserAuthenticationPackets {
     public static Packet createPacket(boolean result){
         return preparePacket(result);
     }

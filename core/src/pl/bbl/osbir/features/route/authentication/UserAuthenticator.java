@@ -2,7 +2,7 @@ package pl.bbl.osbir.features.route.authentication;
 
 import pl.bbl.osbir.database.connection.DatabaseConnection;
 import pl.bbl.osbir.database.statements.users.UsersTableStatements;
-import pl.bbl.osbir.features.route.authentication.packets.AuthenticationResultPacket;
+import pl.bbl.osbir.features.route.authentication.packets.UserAuthenticationPackets;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.osbir.servers.users.user.User;
 import pl.bbl.osbir.tools.misc.ObjectComparison;
@@ -28,7 +28,7 @@ public class UserAuthenticator {
             user.setAuthenticated(true);
             Logger.getLogger(UserAuthenticator.class.getName()).log(Level.INFO, "[UserAuthenticationServer]" + login + " has been authenticated.");
         }
-        user.sendPacket(AuthenticationResultPacket.createPacket(user.isAuthenticated()));
+        user.sendPacket(UserAuthenticationPackets.createPacket(user.isAuthenticated()));
     }
 
     private static boolean searchDatabaseForAccount(String login, String password){
