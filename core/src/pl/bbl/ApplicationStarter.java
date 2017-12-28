@@ -1,13 +1,12 @@
 package pl.bbl;
 
-import pl.bbl.database.Database;
-import pl.bbl.database.connection.DatabaseConnection;
+import pl.bbl.osbir.database.Database;
+import pl.bbl.osbir.database.connection.DatabaseConnection;
 import pl.bbl.network.packet.Packet;
-import pl.bbl.servers.LocalServersDataExchanger;
-import pl.bbl.servers.gameservers.GameServerAuthenticationServer;
+import pl.bbl.servers.gameservers.instance.GameServerAuthenticationServer;
 import pl.bbl.servers.gameservers.gameserver.GameServer;
 import pl.bbl.servers.gameservers.properties.GameServerProperties;
-import pl.bbl.servers.users.UserAuthenticationServer;
+import pl.bbl.servers.users.instance.UserAuthenticationServer;
 import pl.bbl.servers.users.properties.UserServerProperties;
 import pl.bbl.servers.users.user.User;
 import pl.bbl.tools.test.client.TestClient;
