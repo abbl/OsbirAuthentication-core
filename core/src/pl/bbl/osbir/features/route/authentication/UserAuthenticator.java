@@ -2,10 +2,10 @@ package pl.bbl.osbir.features.route.authentication;
 
 import pl.bbl.osbir.database.connection.DatabaseConnection;
 import pl.bbl.osbir.database.statements.users.UsersTableStatements;
-import pl.bbl.tools.misc.ObjectComparison;
 import pl.bbl.osbir.features.route.authentication.packets.AuthenticationResultPacket;
 import pl.bbl.network.packet.Packet;
-import pl.bbl.servers.users.user.User;
+import pl.bbl.osbir.servers.users.user.User;
+import pl.bbl.osbir.tools.misc.ObjectComparison;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

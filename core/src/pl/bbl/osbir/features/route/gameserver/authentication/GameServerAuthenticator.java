@@ -1,11 +1,11 @@
 package pl.bbl.osbir.features.route.gameserver.authentication;
 
+import pl.bbl.network.packet.Packet;
 import pl.bbl.osbir.database.connection.DatabaseConnection;
 import pl.bbl.osbir.database.statements.gameservers.GameServerTableStatements;
-import pl.bbl.tools.misc.ObjectComparison;
 import pl.bbl.osbir.features.route.authentication.packets.AuthenticationResultPacket;
-import pl.bbl.network.packet.Packet;
-import pl.bbl.servers.gameservers.gameserver.GameServer;
+import pl.bbl.osbir.servers.gameservers.gameserver.GameServer;
+import pl.bbl.osbir.tools.misc.ObjectComparison;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
