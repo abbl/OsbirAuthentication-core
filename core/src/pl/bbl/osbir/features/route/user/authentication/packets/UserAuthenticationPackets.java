@@ -2,15 +2,14 @@ package pl.bbl.osbir.features.route.user.authentication.packets;
 
 
 import pl.bbl.network.packet.Packet;
+import pl.bbl.osbir.servers.users.receivers.UserAuthenticationReceivers;
 
 public class UserAuthenticationPackets {
-    public static Packet createPacket(boolean result){
-        return preparePacket(result);
+    public static Packet createAuthenticationResultPacket(boolean result){
+        return new Packet(UserAuthenticationReceivers.USER_AUTHENTICATION, "AUTHENTICATION_RESULT").addData("result", result);
     }
 
-    private static Packet preparePacket(boolean result){
-        Packet basicPacket = new Packet("AUTHENTICATION_PACKETS", "AUTHENTICATION_RESULT");
-        basicPacket.addData("result", result);
-        return basicPacket;
+    public static Packet createUserIdPacket(String userId){
+        return new Packet(UserAuthenticationReceivers.USER_AUTHENTICATION, "USER_ID").addData("userId", userId);
     }
 }

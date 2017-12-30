@@ -26,6 +26,6 @@ public class GameServerAuthenticator {
             gameServer.setAuthenticated(true);
             Logger.getLogger(GameServerAuthenticator.class.getName()).log(Level.INFO, "GameServer has been authenticated.");
         }
-        gameServer.sendPacket(UserAuthenticationPackets.createPacket(gameServer.isAuthenticated()));
+        gameServer.sendPacket(UserAuthenticationPackets.createAuthenticationResultPacket(gameServer.isAuthenticated()));
     }
 }

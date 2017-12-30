@@ -5,6 +5,7 @@ import pl.bbl.osbir.database.connection.DatabaseConnection;
 import pl.bbl.osbir.servers.users.instance.UserAuthenticationServer;
 import pl.bbl.osbir.servers.users.properties.UserServerProperties;
 import pl.bbl.osbir.servers.users.user.User;
+import pl.bbl.osbir.tools.logger.ServerLogger;
 
 public class UserAuthenticationWrapper {
     private SegmentCommunicationDirector segmentCommunicationDirector;
@@ -23,6 +24,7 @@ public class UserAuthenticationWrapper {
 
     public void startServer() {
         userAuthenticationThread.start();
+        ServerLogger.log("UserAuthentication started.");
     }
 
     public void requestUserIdVerification(String gameServerId, String userId) {

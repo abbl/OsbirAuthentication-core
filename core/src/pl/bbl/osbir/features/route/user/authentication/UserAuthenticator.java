@@ -28,7 +28,7 @@ public class UserAuthenticator {
             user.setAuthenticated(true);
             Logger.getLogger(UserAuthenticator.class.getName()).log(Level.INFO, "[UserAuthenticationServer]" + login + " has been authenticated.");
         }
-        user.sendPacket(UserAuthenticationPackets.createPacket(user.isAuthenticated()));
+        user.sendPacket(UserAuthenticationPackets.createAuthenticationResultPacket(user.isAuthenticated()));
     }
 
     private static boolean searchDatabaseForAccount(String login, String password){
