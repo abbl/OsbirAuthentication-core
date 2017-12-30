@@ -1,6 +1,8 @@
 package pl.bbl.osbir.database.connection;
 
 
+import pl.bbl.osbir.tools.logger.ServerLogger;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,25 +14,12 @@ import java.util.logging.Logger;
  */
 public class DatabaseConnection {
     private DatabaseCredentials DatabaseCredentials;
-
-    //Connection itself
     private Connection connection;
-
-    //Logger
-    private static final Logger LOGGER = Logger.getLogger( DatabaseConnection.class.getName() );
-
-    /*
-    *   Object building.
-    **/
 
     public DatabaseConnection(DatabaseCredentials DatabaseCredentials){
         this.DatabaseCredentials = DatabaseCredentials;
         establishConnection();
     }
-
-    /*
-    *   Start of connection.
-    **/
 
     private void establishConnection(){
         try {
@@ -39,19 +28,14 @@ public class DatabaseConnection {
         } catch (ClassNotFoundException ex) {
 
         } catch (SQLException ex) {
-            System.out.println("Exception in Database class: " + ex);
+            ServerLogger.log("Exception in Database class: " + ex);
         }
 
-        /*Checking if connection was successful.*/
         if(connection != null)
-            LOGGER.log(Level.INFO, "Connection established successfully.");
+            ServerLogger.log("Connection established successfully.");
         else
-            LOGGER.log(Level.SEVERE, "Connection establishing failed.");
+            ServerLogger.log("Connection establishing failed.");
     }
-
-    /*
-     * Getters and Setters
-     */
 
     public Connection getConnection(){
         return connection;

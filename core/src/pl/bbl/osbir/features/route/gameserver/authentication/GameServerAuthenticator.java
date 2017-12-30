@@ -3,7 +3,7 @@ package pl.bbl.osbir.features.route.gameserver.authentication;
 import pl.bbl.network.packet.Packet;
 import pl.bbl.osbir.database.connection.DatabaseConnection;
 import pl.bbl.osbir.database.statements.gameservers.GameServerTableStatements;
-import pl.bbl.osbir.features.route.authentication.packets.UserAuthenticationPackets;
+import pl.bbl.osbir.features.route.user.authentication.packets.UserAuthenticationPackets;
 import pl.bbl.osbir.servers.gameservers.gameserver.GameServer;
 import pl.bbl.osbir.tools.misc.ObjectComparison;
 
