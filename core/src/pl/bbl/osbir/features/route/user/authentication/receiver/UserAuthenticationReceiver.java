@@ -26,6 +26,9 @@ public class UserAuthenticationReceiver extends PacketReceiver {
             case "REQUEST_USER_ID":
                 sendUserId();
                 return true;
+            case "REQUEST_GAMESERVER_LIST":
+                sendGameServerList();
+                return true;
         }
         return false;
     }
@@ -35,5 +38,11 @@ public class UserAuthenticationReceiver extends PacketReceiver {
             user.sendPacket(UserAuthenticationPackets.createUserIdPacket(user.getId()));
         else
             ServerLogger.log("User without verification tried to access his userId");
+    }
+
+    private void sendGameServerList(){
+        if(user.isAuthenticated()){
+
+        }
     }
 }

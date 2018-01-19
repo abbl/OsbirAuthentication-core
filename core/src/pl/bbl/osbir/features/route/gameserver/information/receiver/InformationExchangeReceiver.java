@@ -32,7 +32,7 @@ public class InformationExchangeReceiver extends PacketReceiver{
         return false;
     }
 
-    public void requestUserVerification(String userId){
+    private void requestUserVerification(String userId){
         gameServerAuthenticationServer.requestUserIdVerification(getGameServer().getId(), userId);
     }
 

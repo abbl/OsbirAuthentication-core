@@ -5,6 +5,7 @@ import pl.bbl.osbir.database.connection.DatabaseConnection;
 import pl.bbl.osbir.database.statements.gameservers.GameServerTableStatements;
 import pl.bbl.osbir.features.route.user.authentication.packets.UserAuthenticationPackets;
 import pl.bbl.osbir.servers.gameservers.gameserver.GameServer;
+import pl.bbl.osbir.tools.logger.ServerLogger;
 import pl.bbl.osbir.tools.misc.ObjectComparison;
 
 import java.util.logging.Level;
@@ -24,7 +25,7 @@ public class GameServerAuthenticator {
         if(GameServerTableStatements.getGameServerData(databaseConnection, gameServerAuthenticationKey) != null){
             gameServer.setAuthenticationKey(gameServerAuthenticationKey);
             gameServer.setAuthenticated(true);
-            Logger.getLogger(GameServerAuthenticator.class.getName()).log(Level.INFO, "GameServer has been authenticated.");
+            ServerLogger.log("GameServer has been authenticated.");
         }
         gameServer.sendPacket(UserAuthenticationPackets.createAuthenticationResultPacket(gameServer.isAuthenticated()));
     }
