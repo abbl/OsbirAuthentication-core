@@ -6,7 +6,7 @@ import pl.bbl.network.server.handler.PacketReceiver;
 import pl.bbl.osbir.database.connection.DatabaseConnection;
 import pl.bbl.osbir.database.statements.users.UsersTableStatements;
 import pl.bbl.osbir.features.user.authentication.packets.UserAuthenticationPackets;
-import pl.bbl.osbir.servers.users.user.User;
+import pl.bbl.osbir.servers.user.user.User;
 import pl.bbl.osbir.tools.logger.ServerLogger;
 
 import java.sql.ResultSet;

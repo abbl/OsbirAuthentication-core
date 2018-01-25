@@ -1,4 +1,4 @@
-package pl.bbl.osbir.servers.users.user;
+package pl.bbl.osbir.servers.user.user;
 
 import io.netty.channel.Channel;
 import pl.bbl.network.server.connection.AbstractUser;
