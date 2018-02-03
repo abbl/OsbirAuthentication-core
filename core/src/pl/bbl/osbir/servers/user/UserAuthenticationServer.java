@@ -26,6 +26,7 @@ public class UserAuthenticationServer {
         this.userAuthenticationServer = new Server(UserAuthenticationServerProperties.PORT, User.class, packetDistributor);
         this.serverThread = new Thread(userAuthenticationServer);
         this.databaseConnection = databaseConnection;
+        this.segmentCommunicationDirector = segmentCommunicationDirector;
         initializePacketReceivers();
     }
 
