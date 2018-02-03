@@ -32,9 +32,9 @@ public class DatabaseConnection {
         }
 
         if(connection != null)
-            ServerLogger.log("Connection established successfully.");
+            ServerLogger.log("DatabaseConnection established successfully.");
         else
-            ServerLogger.log("Connection establishing failed.");
+            ServerLogger.log("DatabaseConnection establishing failed.");
     }
 
     public Connection getConnection(){

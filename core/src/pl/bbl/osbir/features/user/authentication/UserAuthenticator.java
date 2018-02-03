@@ -13,17 +13,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserAuthenticator extends PacketReceiver{
-    private DatabaseConnection databaseConnection;
+    private static DatabaseConnection databaseConnection;
 
     public UserAuthenticator(DatabaseConnection databaseConnection) {
         super("UserAuthenticator");
-        this.databaseConnection = databaseConnection;
+        UserAuthenticator.databaseConnection = databaseConnection;
     }
 
     @Override
     public void receivePacket(Packet packet, AbstractUser abstractUser) {
         switch (packet.getPacketType()){
-            case "REQUEST_AUTHENTICATION_START":
+            case "REQUEST_USER_AUTHENTICATION":
                 authenticateUser(packet, (User) abstractUser);
                 break;
             case "REQUEST_USER_ID":
