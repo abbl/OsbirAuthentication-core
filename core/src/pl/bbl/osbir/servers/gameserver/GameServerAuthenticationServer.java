@@ -1,6 +1,7 @@
 package pl.bbl.osbir.servers.gameserver;
 
 import pl.bbl.network.server.Server;
+import pl.bbl.network.server.connection.AbstractUser;
 import pl.bbl.network.server.handler.PacketDistributor;
 import pl.bbl.osbir.SegmentCommunicationDirector;
 import pl.bbl.osbir.database.connection.DatabaseConnection;
@@ -10,6 +11,9 @@ import pl.bbl.osbir.servers.gameserver.properties.GameServerAuthenticationServer
 import pl.bbl.osbir.servers.gameserver.user.GameServer;
 import pl.bbl.osbir.servers.user.properties.UserAuthenticationServerProperties;
 import pl.bbl.osbir.tools.logger.ServerLogger;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class GameServerAuthenticationServer {
     private SegmentCommunicationDirector segmentCommunicationDirector;
@@ -39,5 +43,15 @@ public class GameServerAuthenticationServer {
 
     public void verifyUser(String userKey, String username, GameServer gameServer) {
 
+    }
+
+    public ArrayList<HashMap<String,String>> getGameServerList() {
+        ArrayList<HashMap<String,String>> serverList = new ArrayList<>();
+        for (AbstractUser abstractUser : gameServerAuthenticationServer.getUsers()){
+            if(abstractUser.isAuthenticated()){
+                serverList.add(((GameServer)abstractUser).getInformation());
+            }
+        }
+        return serverList;
     }
 }

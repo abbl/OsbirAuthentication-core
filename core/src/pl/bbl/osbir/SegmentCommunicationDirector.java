@@ -5,6 +5,9 @@ import pl.bbl.osbir.database.connection.DatabaseConnection;
 import pl.bbl.osbir.servers.gameserver.GameServerAuthenticationServer;
 import pl.bbl.osbir.servers.user.UserAuthenticationServer;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 
 public class SegmentCommunicationDirector {
     private DatabaseConnection databaseConnection;
@@ -13,7 +16,7 @@ public class SegmentCommunicationDirector {
 
     public SegmentCommunicationDirector(){
         establishDatabaseConnection();
-        userAuthenticationServer = new UserAuthenticationServer(databaseConnection);
+        userAuthenticationServer = new UserAuthenticationServer(databaseConnection, this);
         userAuthenticationServer.start();
         gameServerAuthenticationServer = new GameServerAuthenticationServer(databaseConnection, this);
         gameServerAuthenticationServer.start();
@@ -23,4 +26,7 @@ public class SegmentCommunicationDirector {
         databaseConnection = Database.establishDatabaseConnection();
     }
 
+    public ArrayList<HashMap<String,String>> getGameServerList() {
+        return gameServerAuthenticationServer.getGameServerList();
+    }
 }

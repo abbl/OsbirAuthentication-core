@@ -19,10 +19,19 @@ public class GameServerInformationExchanger extends PacketReceiver{
         switch (packet.getPacketType()){
             case "VERIFY_USER":
                 verifyUser((String)packet.getData("userKey"), (String)packet.getData("username"), (GameServer) abstractUser);
+                break;
+            case "UPDATE_GAMESERVER_INFORMATION":
+                updateGameServerInformation(packet, (GameServer) abstractUser);
         }
     }
 
     private void verifyUser(String userKey, String username, GameServer gameServer) {
         gameServerAuthenticationServer.verifyUser(userKey, username, gameServer);
+    }
+
+    private void updateGameServerInformation(Packet packet, GameServer gameServer) {
+        if(gameServer.isAuthenticated()){
+            gameServer.updateInformation((String)packet.getData("name"), (String) packet.getData("host"), (int) packet.getData("port"));
+        }
     }
 }

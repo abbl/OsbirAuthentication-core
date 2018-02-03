@@ -7,7 +7,9 @@ import pl.bbl.osbir.database.connection.DatabaseConnection;
 import pl.bbl.osbir.database.statements.gameservers.GameServerTableStatements;
 import pl.bbl.osbir.features.gameserver.authentication.packets.GameServerAuthenticationPackets;
 import pl.bbl.osbir.servers.gameserver.user.GameServer;
+import pl.bbl.osbir.tools.logger.ServerLogger;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class GameServerAuthenticator extends PacketReceiver{
@@ -28,12 +30,13 @@ public class GameServerAuthenticator extends PacketReceiver{
 
     private void authenticateGameServer(String authenticationKey, GameServer gameServer) {
         boolean authenticationResult = false;
-        try {
-            if(GameServerTableStatements.getGameServerData(databaseConnection, authenticationKey).next())
-                authenticationResult = true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        ResultSet rs = GameServerTableStatements.getGameServerData(databaseConnection, authenticationKey);
+
+        if(rs != null)
+            authenticationResult = true;
+        else
+            ServerLogger.log("[GameServerAuthenticator]Received wrong key from gameserver candidate.");
+
         gameServer.setAuthenticated(authenticationResult);
         gameServer.sendPacket(GameServerAuthenticationPackets.createGameServerAuthenticationResultPacket(authenticationResult));
     }
