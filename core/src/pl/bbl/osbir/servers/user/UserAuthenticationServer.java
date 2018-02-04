@@ -1,11 +1,14 @@
 package pl.bbl.osbir.servers.user;
 
 import pl.bbl.network.server.Server;
+import pl.bbl.network.server.connection.AbstractUser;
 import pl.bbl.network.server.handler.PacketDistributor;
 import pl.bbl.osbir.SegmentCommunicationDirector;
 import pl.bbl.osbir.database.connection.DatabaseConnection;
+import pl.bbl.osbir.features.gameserver.informationexchange.packets.GameServerInformationExchangePackets;
 import pl.bbl.osbir.features.user.authentication.UserAuthenticator;
 import pl.bbl.osbir.features.user.information.UserInformationExchanger;
+import pl.bbl.osbir.servers.gameserver.user.GameServer;
 import pl.bbl.osbir.servers.user.properties.UserAuthenticationServerProperties;
 import pl.bbl.osbir.servers.user.user.User;
 import pl.bbl.osbir.tools.logger.ServerLogger;
@@ -38,6 +41,18 @@ public class UserAuthenticationServer {
     public void start(){
         ServerLogger.log("UserAuthenticationServer has been started.");
         serverThread.start();
+    }
+
+    public void verifyUserForGameServer(String userKey, String username, GameServer gameServer) {
+        User user = (User) userAuthenticationServer.getUserById(userKey);
+        boolean verificationResult = false;
+
+        if(user != null){
+            if (user.isAuthenticated() && user.getUsername().equals(username)) {
+                verificationResult = true;
+            }
+        }
+        gameServer.sendPacket(GameServerInformationExchangePackets.createUserVerificationResultPacket(userKey, username, verificationResult));
     }
 
     public ArrayList<HashMap<String,String>> getServerList(){

@@ -42,6 +42,7 @@ public class UserAuthenticator extends PacketReceiver{
                 if(resultSet.getString("password").equals(password)){
                     ServerLogger.log( username + " has been successfully logged in");
                     user.setAuthenticated(true);
+                    user.setCredentials(username, password);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

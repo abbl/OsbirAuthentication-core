@@ -42,7 +42,7 @@ public class GameServerAuthenticationServer {
     }
 
     public void verifyUser(String userKey, String username, GameServer gameServer) {
-
+        segmentCommunicationDirector.verifyUser(userKey, username, gameServer);
     }
 
     public ArrayList<HashMap<String,String>> getGameServerList() {
